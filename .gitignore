@@ -1,0 +1,22 @@
+# Environment variables
+.env
+
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# Google OAuth credentials
+credentials.json
+token.json
+
+# Generated audio
+*.mp3
+*.wav
+
+# Local data
+data/
+
+# IDE
+.vscode/
+.idea/

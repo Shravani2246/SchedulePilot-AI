@@ -1,0 +1,25 @@
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+# OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+# OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-4o-mini")
+
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+GROQ_MODEL = os.getenv(
+    "GROQ_MODEL",
+    "llama-3.3-70b-versatile"
+)
+DEEPGRAM_API_KEY = os.getenv(
+    "DEEPGRAM_API_KEY"
+)
+PINECONE_API_KEY = os.getenv("PINECONE_API_KEY")
+PINECONE_HOST = os.getenv("PINECONE_HOST")
+PINECONE_NAMESPACE = os.getenv("PINECONE_NAMESPACE")
+
+SUPABASE_DB_HOST = os.getenv("SUPABASE_DB_HOST")
+SUPABASE_DB_NAME = os.getenv("SUPABASE_DB_NAME")
+SUPABASE_DB_USER = os.getenv("SUPABASE_DB_USER")
+SUPABASE_DB_PASSWORD = os.getenv("SUPABASE_DB_PASSWORD")
+SUPABASE_DB_PORT = os.getenv("SUPABASE_DB_PORT")
