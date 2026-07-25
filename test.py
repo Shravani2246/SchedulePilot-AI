@@ -4,7 +4,7 @@ import tempfile
 
 import websockets
 from playsound import playsound
-
+from websockets.exceptions import ConnectionClosed
 
 async def main():
 
@@ -35,7 +35,17 @@ async def main():
                 message
             )
 
-            response = await websocket.recv()
+            try:
+
+                response = await websocket.recv()
+
+            except ConnectionClosed as e:
+
+                print(
+                    f"\nConnection closed: {e}\n"
+                )
+
+                break
 
             # -------------------------
             # Handle Server Text/Error

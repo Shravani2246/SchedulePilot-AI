@@ -304,6 +304,32 @@ async def voice_socket(
                 "AUDIO SENT"
             )
 
+
+            # --------------------------
+            # Delete Temporary Audio
+            # --------------------------
+
+            try:
+
+                if os.path.exists(
+                    audio_file
+                ):
+
+                    os.remove(
+                        audio_file
+                    )
+
+                    print(
+                        "TEMP AUDIO DELETED"
+                    )
+
+            except OSError as e:
+
+                print(
+                    "TEMP AUDIO DELETE ERROR:",
+                    str(e)
+                )
+
     except WebSocketDisconnect:
 
         print(

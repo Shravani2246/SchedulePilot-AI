@@ -1,22 +1,51 @@
-from agent import current_time
+from services.deepgram_service import (
+    DeepgramService
+)
 
 
-def main():
+deepgram = DeepgramService()
+
+
+audio_file = "test_audio.mp3"
+
+
+try:
 
     print(
-        "Testing current_time tool..."
+        "Testing Deepgram Speech-to-Text..."
     )
 
-    result = current_time.invoke(
-        {}
+    transcript = deepgram.speech_to_text(
+        audio_file
     )
 
     print(
-        "Tool result:",
-        result
+        "\nTranscript:"
+    )
+
+    print(
+        transcript
     )
 
 
-if __name__ == "__main__":
+except FileNotFoundError:
 
-    main()
+    print(
+        "\nERROR: test_audio.mp3 was not found."
+    )
+
+    print(
+        "Place an MP3 voice recording named "
+        "'test_audio.mp3' in the project root."
+    )
+
+
+except Exception as e:
+
+    print(
+        "\nSTT ERROR:"
+    )
+
+    print(
+        str(e)
+    )
